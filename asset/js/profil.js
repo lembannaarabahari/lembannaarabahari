@@ -233,7 +233,7 @@ function openImageModal(src, title, description) {
         modalTitle.textContent = title;
         modalDescription.textContent = description;
 
-        imageModal.style.display = 'block';
+        imageModal.style.display = 'flex';
         setTimeout(() => {
             imageModal.classList.add('show');
         }, 10);
@@ -1219,7 +1219,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         modalTitle.textContent = itemData.title;
                         modalDescription.textContent = itemData.description;
 
-                        imageModal.style.display = 'block';
+                        imageModal.style.display = 'flex';
                         setTimeout(() => {
                             imageModal.classList.add('show');
                         }, 10);
@@ -1288,7 +1288,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Keyboard navigation for modal
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && imageModal.style.display === 'block') {
+        if (e.key === 'Escape' && imageModal.style.display === 'flex') {
             closeModal();
         }
     });

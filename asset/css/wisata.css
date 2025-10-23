@@ -2647,24 +2647,13 @@ animation: fadeIn 0.3s ease;
      transform: scale(1.08) rotate(90deg); 
      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); } 
   .modal .close:active { transform: scale(0.95); } 
-  .modal .close::before, .modal .close::after { 
-    content: ""; 
-    position: absolute; 
-    height: 18px; 
-    width: 2px; 
-    border-radius: 2px; 
-    background-color: var(--primary-color);
-} .modal .close::before { 
-    transform: rotate(45deg); 
-} .modal .close::after { 
-    transform: rotate(-45deg); } 
     @media (max-width: 768px) { 
         .modal .close { 
             top: 16px; 
             right: 16px; 
             width: 36px; 
             height: 36px; 
-        } .modal .close::before, .modal .close::after { height: 14px; background-color: var(--primary-color); } }
+        } }
 
 
 .modal .modal-content #akomodasiModalContent{
@@ -5286,4 +5275,4 @@ h1, h2, h3 {
 
 /* kuliner-enhancements.css
    Borders + UI/UX improvements for Kuliner section without touching existing large stylesheet.
-   This file is safe to remove independently and only overrides/extends styl
+   This file is safe to remove 

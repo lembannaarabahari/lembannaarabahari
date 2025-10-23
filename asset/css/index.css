@@ -3064,23 +3064,31 @@ body.profil-nav-floating .profil-main {
     overflow: auto;
     opacity: 0;
     transition: opacity 0.3s ease;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .image-modal.show {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
     opacity: 1;
 }
 
 .image-modal-content {
     position: relative;
     background-color: #fff;
-    margin: 5% auto;
-    width: 80%;
+    margin: 2% auto;
+    width: 90%;
     max-width: 1000px;
     border-radius: 12px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     transform: scale(0.9);
     transition: transform 0.3s ease;
+    max-height: calc(100vh - 40px);
+    display: flex;
+    flex-direction: column;
 }
 
 .image-modal.show .image-modal-content {
@@ -3113,29 +3121,140 @@ body.profil-nav-floating .profil-main {
 .image-modal-body {
     display: flex;
     flex-direction: column;
+    flex: 1;
+    overflow: hidden;
 }
 
 .image-modal-body img {
     width: 100%;
-    max-height: 70vh;
+    max-height: 60vh;
     object-fit: cover;
+    flex-shrink: 0;
 }
 
 .image-modal-info {
     padding: 30px;
     background: #f8f9fa;
+    flex: 1;
+    overflow-y: auto;
 }
 
 .image-modal-info h3 {
     margin: 0 0 15px 0;
     color: #133E87;
-    font-size: 1.8rem;
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    font-family: 'Playfair Display SC', serif;
+    font-weight: 600;
+    line-height: 1.3;
 }
 
 .image-modal-info p {
     margin: 0;
     color: #555;
     line-height: 1.6;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+/* Mobile-specific styles for image modal */
+@media (max-width: 900px) {
+    .image-modal,
+    .image-modal.show {
+        padding: 15px;
+        /* Account for mobile bottom navigation */
+        padding-bottom: calc(80px + env(safe-area-inset-bottom, 15px));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .image-modal-content {
+        width: 95%;
+        margin: 0;
+        max-height: calc(100vh - 110px - env(safe-area-inset-bottom, 0px));
+        border-radius: 16px;
+    }
+    
+    .image-modal-body img {
+        max-height: 50vh;
+    }
+    
+    .image-modal-info {
+        padding: 20px;
+    }
+    
+    .image-modal-info h3 {
+        font-size: clamp(1.1rem, 5vw, 1.4rem);
+        margin-bottom: 12px;
+    }
+    
+    .image-modal-info p {
+        font-size: clamp(0.85rem, 3.5vw, 0.95rem);
+        line-height: 1.5;
+    }
+    
+    .image-modal-close {
+        width: 36px;
+        height: 36px;
+        font-size: 24px;
+        top: 12px;
+        right: 12px;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .image-modal,
+    .image-modal.show {
+        padding: 10px;
+        padding-bottom: calc(90px + env(safe-area-inset-bottom, 10px));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .image-modal-content {
+        width: 98%;
+        margin: 0;
+        border-radius: 12px;
+        max-height: calc(100vh - 120px - env(safe-area-inset-bottom, 0px));
+    }
+    
+    .image-modal-body img {
+        max-height: 45vh;
+    }
+    
+    .image-modal-info {
+        padding: 15px;
+    }
+    
+    .image-modal-info h3 {
+        font-size: clamp(1rem, 6vw, 1.25rem);
+        margin-bottom: 10px;
+    }
+    
+    .image-modal-info p {
+        font-size: clamp(0.8rem, 4vw, 0.9rem);
+        line-height: 1.4;
+    }
+    
+    .image-modal-close {
+        width: 32px;
+        height: 32px;
+        font-size: 20px;
+        top: 10px;
+        right: 10px;
+    }
+}
+
+/* Landscape orientation on mobile devices */
+@media (max-width: 900px) and (orientation: landscape) {
+    .image-modal-body img {
+        max-height: 40vh;
+    }
+    
+    .image-modal-content {
+        max-height: calc(100vh - 80px - env(safe-area-inset-bottom, 0px));
+    }
 }
 
 
@@ -3176,5 +3295,23 @@ body.profil-nav-floating .profil-main {
   .profil-nav {
     display: block !important;
   }
+}
+
+/* Enhanced Close Button Styles */
+.close {
+  transition: all 0.2s ease !important;
+}
+
+.close:hover {
+  background: var(--secondary-color) !important;
+  border-color: var(--white-color) !important;
+  color: var(--white-color) !important;
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(19, 62, 135, 0.4) !important;
+}
+
+.close:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 8px rgba(19, 62, 135, 0.3) !important;
 }
 

@@ -440,11 +440,11 @@
         </section>
 
         <!-- Modal Travel Agency Services -->
-        <div class="travel-modal" id="travelModal">
-            <div class="travel-modal-content">
+        <div class="travel-modal" id="travelModal" style="z-index: 10100 !important;">
+            <div class="travel-modal-content" style="z-index: 10102 !important;">
                 <div class="travel-modal-header">
                     <h2 id="modalServiceTitle">Layanan Rental</h2>
-                    <button class="travel-modal-close" id="travelModalClose">×</button>
+                    <button class="travel-modal-close" id="travelModalClose" style="position: absolute; top: 15px; right: 15px; width: 40px; height: 40px; font-size: 24px; color: #F3F3E0; background: #133E87; border: 2px solid #F3F3E0; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10150 !important; box-shadow: 0 4px 12px rgba(19, 62, 135, 0.3); transition: all 0.2s ease;">×</button>
                 </div>
                 <div class="travel-modal-body">
                     <div class="services-grid" id="servicesGrid">
@@ -474,11 +474,11 @@
         </div>
         
         <!-- Modal Lihat Lebih Lanjut -->
-        <div class="travel-modal" id="deskripsiModal">
-            <div class="travel-modal-content">
+        <div class="travel-modal" id="deskripsiModal" style="z-index: 10100 !important;">
+            <div class="travel-modal-content" style="z-index: 10102 !important;">
                 <div class="travel-modal-header">
                     
-                    <button class="travel-modal-close" id="deskripsiModalClose">×</button>
+                    <button class="travel-modal-close" id="deskripsiModalClose" style="position: absolute; top: 15px; right: 15px; width: 40px; height: 40px; font-size: 24px; color: #F3F3E0; background: #133E87; border: 2px solid #F3F3E0; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10150 !important; box-shadow: 0 4px 12px rgba(19, 62, 135, 0.3); transition: all 0.2s ease;">×</button>
                 </div>
                 <div class="travel-modal-body">
                     <div class="deskripsi-content">
@@ -491,9 +491,9 @@
     </main>
 
     <!-- Modal Wisata (Objek Wisata) -->
-    <div id="wisataModal" class="modal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-        <div class="modal-content">
-            <button class="close" id="wisataModalCloseBtn" type="button" aria-label="Tutup" style="position: absolute; top: 15px; right: 15px; width: 40px; height: 40px; font-size: 24px; color: #fff; background: rgba(0,0,0,0.5); border: 2px solid #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1050;">×</button>
+    <div id="wisataModal" class="modal" style="display:none; z-index: 10100 !important;" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-content" style="z-index: 10102 !important;">
+            <button class="close" id="wisataModalCloseBtn" type="button" aria-label="Tutup" style="position: absolute; top: 15px; right: 15px; width: 40px; height: 40px; font-size: 24px; color: #F3F3E0; background: #133E87; border: 2px solid #F3F3E0; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10150 !important; box-shadow: 0 4px 12px rgba(19, 62, 135, 0.3); transition: all 0.2s ease;">×</button>
             <div class="modal-header">
                 <img id="modalImage" src="" alt="Gambar destinasi" loading="lazy">
                 <div class="modal-header-overlay">
@@ -517,12 +517,12 @@
     </div>
 
     <!-- Modal Atraksi -->
-    <div id="atraksiDetailModal" class="modal atraksi-modal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="atraksiTitle" aria-describedby="atraksiDesc">
-      <div class="modal-content atraksi-modal-content fullscreen-modal redesigned-modal">
-        <button class="back-button" id="atraksiBackBtn" aria-label="Kembali ke daftar atraksi">
+    <div id="atraksiDetailModal" class="modal atraksi-modal" style="display:none; z-index: 10100 !important;" role="dialog" aria-modal="true" aria-labelledby="atraksiTitle" aria-describedby="atraksiDesc">
+      <div class="modal-content atraksi-modal-content fullscreen-modal redesigned-modal" style="z-index: 10102 !important;">
+        <button class="back-button" id="atraksiBackBtn" aria-label="Kembali ke daftar atraksi" style="z-index: 10150 !important;">
           <i class="fa-solid fa-arrow-left"></i> Kembali
         </button>
-        <span class="close" id="atraksiDetailModalCloseBtn" aria-label="Tutup">&times;</span>
+        <button class="close" id="atraksiDetailModalCloseBtn" type="button" aria-label="Tutup" style="position: absolute; top: 15px; right: 15px; width: 40px; height: 40px; font-size: 24px; color: #F3F3E0; background: #133E87; border: 2px solid #F3F3E0; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10150 !important; box-shadow: 0 4px 12px rgba(19, 62, 135, 0.3); transition: all 0.2s ease;">&times;</button>
         <div class="modal-main">
           <div class="modal-images">
             <div class="main-image-container">
@@ -576,11 +576,9 @@
     </div>
 
     <!-- Modal Akomodasi -->
-    <div class="modal" id="akomodasiDetailModal" style="display:none;">
-        <div class="modal-content">
-            <button class="close" id="akomodasiDetailModalCloseBtn" aria-label="Tutup modal">
-                <span class="close-icon"></span>
-            </button>
+    <div class="modal" id="akomodasiDetailModal" style="display:none; z-index: 10100 !important;">
+        <div class="modal-content" style="z-index: 10102 !important;">
+            <button class="close" id="akomodasiDetailModalCloseBtn" type="button" aria-label="Tutup modal" style="position: absolute; top: 15px; right: 15px; width: 40px; height: 40px; font-size: 24px; color: #F3F3E0; background: #133E87; border: 2px solid #F3F3E0; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10150 !important; box-shadow: 0 4px 12px rgba(19, 62, 135, 0.3); transition: all 0.2s ease;">×</button>
             <div id="akomodasiModalContent"></div>
         </div>
     </div>
