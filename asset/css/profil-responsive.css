@@ -1378,11 +1378,19 @@
     .person-name {
         font-size: 1.3rem;
     }
-    .video-modal-content{height:80vh;width:95vw;padding:15px;}
+    .video-modal-content{height:400px;width:75vw;padding:15px;}
     .video-modal-content iframe{border-radius:8px;border-width:1px;}
 
 }
 
+
+@media (max-width: 900px){
+   .video-modal-content{height:70vh;width:95vw;padding:15px;}
+}
+
+@media (max-width: 400px){
+   .video-modal-content{height:50vh;width:95vw;padding:15px;}
+}
 
 /* Awards horizontal scroll for small tablets (600px–930px) */
 @media (min-width: 320px) and (max-width: 930px){

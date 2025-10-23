@@ -3143,7 +3143,7 @@ body.profil-nav-floating .profil-main {
 /* Video Modal */
 .video-modal{position:fixed;inset:0;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;z-index:10000;}
 .video-modal.open{display:flex;}
-.video-modal-content{position:relative;width:min(95vw,1200px);height:min(85vh,800px);background:#1a1a2e;border-radius:16px;overflow:hidden;border:3px solid #16213e;box-shadow:0 20px 60px rgba(0,0,0,.6);margin:0 auto;padding:20px;}
+.video-modal-content{position:relative;width:min(95vw,1200px);height:min(85vh,800px);background:#1a1a2e;border-radius:16px;overflow:hidden;border:3px solid #16213e;box-shadow:0 20px 60px rgba(0,0,0,.6);margin:40px 40px 120px 40px;padding:20px;}
 .video-modal-content video{width:100%;height:100%;object-fit:contain;display:block;margin:0 auto;}
 .video-modal-content iframe{width:100%;height:100%;border:2px solid #0f172a;border-radius:12px;display:block;margin:0 auto;background:#000;}
 .video-close{position:absolute;top:15px;right:15px;width:45px;height:45px;border:2px solid #16213e;border-radius:50%;background:rgba(22,33,62,.95);color:#ffffff;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:1000;transition:all 0.3s ease;}
