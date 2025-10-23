@@ -351,14 +351,16 @@ class ModernBottomNav {
   }
 
   getCurrentPage() {
-    const path = window.location.pathname.split('/').pop() || 'profil.html';
-    return path.replace('.html', '');
+    const path = window.location.pathname.split('/').pop() || 'index.html';
+    const page = path.replace('.html', '');
+    // Map index to beranda for proper mobile nav active state
+    return page === 'index' ? 'beranda' : page;
   }
 
   setActiveState() {
     this.navItems.forEach(item => {
       const page = item.dataset.page;
-      if (page === this.currentPage || (this.currentPage === '' && page === 'profil')) {
+      if (page === this.currentPage) {
         item.classList.add('active');
       } else {
         item.classList.remove('active');

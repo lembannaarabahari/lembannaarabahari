@@ -1390,6 +1390,9 @@
 
 @media (max-width: 400px){
    .video-modal-content{height:50vh;width:95vw;padding:15px;}
+   .image-modal{
+    padding-bottom: 150px;
+   }
 }
 
 /* Awards horizontal scroll for small tablets (600px–930px) */
