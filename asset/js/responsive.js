@@ -352,7 +352,7 @@ class ModernBottomNav {
 
   getCurrentPage() {
     const path = window.location.pathname.split('/').pop() || 'index.html';
-    const page = path.replace('.html', '');
+    const page = path.replace('.html', '').toLowerCase(); // Convert to lowercase
     // Map index to beranda for proper mobile nav active state
     return page === 'index' ? 'beranda' : page;
   }
