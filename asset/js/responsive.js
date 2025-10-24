@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const navAtas = document.querySelector('.nav-atas');
   const hamburger = document.querySelector('.hamburger');
-  const menuList = document.querySelector('.menu-list');
+  const menuList = document.querySelector('.menu-list') || document.querySelector('.nav-links');
 
   // Define submenu content for each menu item
   const menuSubmenuData = {
@@ -86,9 +86,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // Close any open submenus
-    document
-      .querySelectorAll('.menu-list > li.open')
-      .forEach(li => li.classList.remove('open'));
+    const navContainer = document.querySelector('.menu-list') || document.querySelector('.nav-links');
+    if (navContainer) {
+      navContainer.querySelectorAll('li.open')
+        .forEach(li => li.classList.remove('open'));
+    }
   }
 
   // Check if we're in mobile/tablet view
@@ -167,7 +169,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.classList.remove('no-scroll');
   };
 
-  menuList.addEventListener('click', closeMenuOnClick);
+  if (menuList) {
+    menuList.addEventListener('click', closeMenuOnClick);
+  }
 
   // Also handle mobile menu list
   const mobileMenuList = document.querySelector('.mobile-menu-list');
@@ -217,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    const a = e.target.closest('.menu-list > li > a');
+    const a = e.target.closest('li > a');
     if (!a) return;
 
     const li = a.parentElement;
@@ -302,9 +306,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (mainNav) {
           mainNav.classList.remove('active');
         }
-        document
-          .querySelectorAll('.menu-list > li.open')
-          .forEach(li => li.classList.remove('open'));
+        const navContainer = document.querySelector('.menu-list') || document.querySelector('.nav-links');
+        if (navContainer) {
+          navContainer.querySelectorAll('li.open')
+            .forEach(li => li.classList.remove('open'));
+        }
         document.body.classList.remove('no-scroll');
         document.documentElement.classList.remove('no-scroll');
       }
@@ -462,12 +468,28 @@ class ModernBottomNav {
 }
 
 // Initialize when DOM is loaded
+let modernBottomNavInstance = null;
+
 document.addEventListener('DOMContentLoaded', () => {
-  // Only initialize on mobile devices
-  if (window.matchMedia('(max-width: 600px)').matches) {
-    new ModernBottomNav();
-  }
+  initMobileNav();
 });
+
+// Handle screen resize
+window.addEventListener('resize', () => {
+  initMobileNav();
+});
+
+function initMobileNav() {
+  const isMobile = window.matchMedia('(max-width: 900px)').matches;
+  
+  if (isMobile && !modernBottomNavInstance) {
+    // Initialize for mobile
+    modernBottomNavInstance = new ModernBottomNav();
+  } else if (!isMobile && modernBottomNavInstance) {
+    // Clean up for desktop
+    modernBottomNavInstance = null;
+  }
+}
 
 // Performance optimization - disable animations on low-end devices
 if (navigator.hardwareConcurrency < 4 || navigator.deviceMemory < 4) {
