@@ -412,7 +412,7 @@ window.akomodasiData = [
             "Lantai satu memiliki dua kamar dengan fasilitas kipas angin.",
             "Lantai dua memiliki dua kamar dengan fasilitas AC untuk kenyamanan ekstra.",
             "Kamar mandi/toilet tersedia di dalam."],
-        img: "asset/img/wisata andalah/akomodasi/villa-paraikatte/01.jpeg",
+        img: "asset/img/wisata andalah/akomodasi/greyhomeicon.jpeg",
         type: "villa",
         location: "Lembanna, Bulukumba",
         whatsapp: "6281523995861",
@@ -425,8 +425,7 @@ window.akomodasiData = [
             {name: 'Dua Lantai', icon: 'fa-stairs'}
         ],
         images: [
-            "asset/img/wisata andalah/akomodasi/villa-paraikatte/01.jpeg",
-            "asset/img/wisata andalah/akomodasi/villa-paraikatte/02.jpeg"
+            "asset/img/wisata andalah/akomodasi/greyhomeicon.jpeg"
         ]
     },
     {
@@ -435,7 +434,7 @@ window.akomodasiData = [
         desc_full: [
             "Villa Sunrise memiliki satu kamar dengan fasilitas full AC.",
             "Kamar mandi/toilet berada di dalam sehingga privasi terjaga."],
-        img: "asset/img/wisata andalah/akomodasi/villa-sunrise/01.jpeg",
+        img: "asset/img/wisata andalah/akomodasi/greyhomeicon.jpeg",
         type: "villa",
         location: "Lembanna, Bulukumba",
         whatsapp: "6285340633221",
@@ -446,7 +445,7 @@ window.akomodasiData = [
             {name: 'Kamar Mandi Dalam', icon: 'fa-bath'},
         ],
         images: [
-            "asset/img/wisata andalah/akomodasi/villa-sunrise/01.jpeg"
+            "asset/img/wisata andalah/akomodasi/greyhomeicon.jpeg"
         ]
     }
 ];
@@ -499,7 +498,7 @@ window.kulinerData = [
         name: "Keripik Pisang Mama Abi",
         desc: "Keripik Pisang Mama Abi dirintis pada tahun 2017 dari hasil olahan pisang kebun keluarga.Berawal dari produksi sederhana dengan wajan …",
         img: "asset3/IMG/UMKM Andalan/WhatsApp Image 2025-08-24 at 12.06.48 PM.jpeg",
-        price: 30000
+        price: 10000
     },
     {
         name: "Aaz Cake",

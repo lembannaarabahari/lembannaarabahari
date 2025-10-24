@@ -66,74 +66,86 @@ h6,
   font-family: "Playfair Display SC", serif;
 }
 
-/* Navbar */
+/* Navigation Bar */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  /* blue glass header */
-  background: linear-gradient(
-    135deg,
-    rgba(19, 62, 135, 0.95) 0%,
-    rgba(96, 139, 193, 0.92) 60%
-  );
-  color: #ffffff;
-  backdrop-filter: blur(8px) saturate(120%);
-  -webkit-backdrop-filter: blur(8px) saturate(120%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: 0 8px 30px rgba(19, 62, 135, 0.18);
-  z-index: 1200;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(19, 62, 135, 0.1);
+  z-index: 1000;
+  transition: all 0.3s ease;
 }
+
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 16px;
-  height: 76px;
+  padding: 0 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 70px;
+}
+
+.nav-logo a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.nav-logo i {
+  font-size: 1.5rem;
+  color: var(--accent-color);
 }
 .nav-menu {
   display: flex;
-  gap: 22px;
   align-items: center;
+  gap: 2rem;
 }
+
 .nav-link {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
-  color: rgba(255, 255, 255, 0.95);
+  gap: 0.25rem;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 8px 12px;
-  border-radius: 12px;
-  transition: all 220ms ease;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 8px;
 }
+
 .nav-link i {
-  font-size: 1.05rem;
-  color: rgba(0, 0, 0, 0.95);
+  font-size: 1.2rem;
 }
+
 .nav-link:hover,
 .nav-link.active {
-  color: #0b2a66;
-  background: rgba(255, 255, 255, 0.92);
-  transform: translateY(-3px);
+  color: var(--accent-color);
+  background: rgba(34, 163, 42, 0.1);
+  transform: translateY(-2px);
 }
+
 .nav-toggle {
   display: none;
   flex-direction: column;
-  gap: 4px;
   cursor: pointer;
+  gap: 4px;
 }
+
 .nav-toggle .bar {
-  width: 26px;
+  width: 25px;
   height: 3px;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 2px;
-  transition: transform 220ms ease, opacity 180ms ease;
+  background: var(--primary-color);
+  transition: all 0.3s ease;
 }
 
 /* overlay used for off-canvas menu */

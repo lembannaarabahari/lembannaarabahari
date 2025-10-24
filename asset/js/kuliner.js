@@ -84,7 +84,7 @@ function buildKulinerCards(container, dataArray) {
                 </div>
                 <div class="card-content">
                     <h3>${data.name}</h3>
-                    <div class="price-tag">${formatPrice(data.price)}</div>
+                    <div class="price-tag">${data.name === "Keripik Pisang Mama Abi" ? "Rp.10.000" : "-"}</div>
                     <p>${data.desc}</p>
                     <div class="spice-level">
                         <span class="spice-label">Pedas:</span>
@@ -120,7 +120,10 @@ function buildKulinerCards(container, dataArray) {
                     
                     // Simulate loading delay for better UX
                     setTimeout(() => {
-                        openKulinerWhatsapp(data);
+                        if (data.name === "Keripik Pisang Mama Abi") {
+                            openKulinerWhatsappCustom(data);
+                        }
+                        // For other items, don't do anything - just show loading animation
                         button.classList.remove('loading');
                         button.disabled = false;
                     }, 800);
@@ -447,6 +450,16 @@ function openKulinerWhatsapp(data) {
         `Halo, saya ingin memesan:\n- Kuliner: ${name}\n- Harga: ${price}\n\nMohon info ketersediaan.`
     );
     const waUrl = `https://wa.me/${KULINER_WHATSAPP_NUMBER}?text=${text}`;
+    window.open(waUrl, '_blank');
+}
+
+function openKulinerWhatsappCustom(data) {
+    const name = data.name || 'Kuliner';
+    const price = "Rp.10.000";
+    const text = encodeURIComponent(
+        `Halo, saya ingin memesan:\n- Kuliner: ${name}\n- Harga: ${price}\n\nMohon info ketersediaan.`
+    );
+    const waUrl = `https://wa.me/6285399075151?text=${text}`;
     window.open(waUrl, '_blank');
 }
 
