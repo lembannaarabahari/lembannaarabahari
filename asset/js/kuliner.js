@@ -84,14 +84,8 @@ function buildKulinerCards(container, dataArray) {
                 </div>
                 <div class="card-content">
                     <h3>${data.name}</h3>
-                    <div class="price-tag">${data.name === "Keripik Pisang Mama Abi" ? "Rp.10.000" : "-"}</div>
+                    
                     <p>${data.desc}</p>
-                    <div class="spice-level">
-                        <span class="spice-label">Pedas:</span>
-                        ${Array.from({length: 3}, (_, i) => 
-                            `<span class="spice-indicator ${i < spiceLevel ? 'active' : ''}"></span>`
-                        ).join('')}
-                    </div>
                     <button class="btn-pesan-kuliner">
                         <span class="btn-text">Pesan Sekarang</span>
                     </button>
