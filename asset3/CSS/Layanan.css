@@ -541,8 +541,8 @@ body {
   align-items: flex-start;
   background: transparent; /* removed glass background */
   color: #dfe9ff;
-  padding: 24px 28px;
-  margin-top: 7vh;
+  padding: 24px 8px;
+  margin-top: 10vh;
   border-radius: 20px;
   border: none;
   box-shadow: none;
@@ -594,7 +594,8 @@ body {
 
 .layanan-page .section-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
+  margin-top: -25vh;
 }
 
 .layanan-page .section-title {
@@ -1612,7 +1613,8 @@ h2.section-title::before,
   }
 
   .layanan-page .section-header {
-    margin-bottom: 2rem !important;
+    margin-bottom: 10rem !important;
+    
   }
 
   .layanan-page .section-title {
