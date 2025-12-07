@@ -595,7 +595,7 @@ body {
 .layanan-page .section-header {
   text-align: center;
   margin-bottom: 1rem;
-  margin-top: -25vh;
+  margin-top: -13vh;
 }
 
 .layanan-page .section-title {
@@ -880,7 +880,7 @@ body {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
   position: relative;
   overflow: hidden;
-  margin-bottom: 5vh;
+  margin-top: 5vh;
 }
 .person-card {
   display: flex;
@@ -1613,7 +1613,7 @@ h2.section-title::before,
   }
 
   .layanan-page .section-header {
-    margin-top: 1rem !important;
+    margin-bottom: 2rem !important;
     
   }
 
