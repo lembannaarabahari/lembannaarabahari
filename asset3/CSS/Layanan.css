@@ -307,11 +307,8 @@ body {
 .layanan-page .header-top .header-brand .header-title .kabupaten-name {
   font-size: 0.9rem;
 }
-.layanan-page .main-title {
-  top: 30%;
-  position: fixed;
-}
-.layanan-page .main-title h1 {
+
+.layanan-page .main-title-1 h1 {
   font-size: 3.2rem;
   line-height: 1.1;
   font-weight: 700;
@@ -571,15 +568,14 @@ body {
   width: 100vw;
 }
 
-.layanan-page .main-title {
+.layanan-page .main-title-1 {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background: transparent; /* removed glass background */
+  color: #dfe9ff;
   padding: 24px 28px;
   margin-top: 7vh;
   border-radius: 20px;
@@ -589,8 +585,8 @@ body {
   max-height: 300px;
 }
 
-.layanan-page .main-title h1 {
-  font-size: clamp(2.6rem, 7vw, 5.5rem);
+.layanan-page .main-title-1 h1 {
+  font-size: clamp(2.6rem, 7vw, 6.5rem);
   font-weight: 300;
   margin: 0;
   line-height: 1.05;
@@ -612,7 +608,7 @@ body {
   background-clip: text;
 }
 
-.layanan-page .main-title h1 span {
+.layanan-page .main-title-1 h1 span {
   font-weight: 500;
   background: none !important;
   -webkit-background-clip: initial !important;
@@ -1561,7 +1557,7 @@ h2.section-title::before,
   }
 
   /* Nudge main-title slightly right and ensure it's lower under the header-top */
-  .layanan-page .main-title {
+  .layanan-page .main-title-1 {
     transform: translateX(6%) !important;
     margin-top: 0 !important;
     height: auto !important;
@@ -1571,13 +1567,13 @@ h2.section-title::before,
     padding: 18px 18px !important;
     max-width: calc(100% - 40px) !important;
     text-align: center !important;
-    background: rgba(255, 255, 255, 0.12) !important;
-    backdrop-filter: blur(8px) !important;
-    -webkit-backdrop-filter: blur(8px) !important;
+    background: transparent !important; /* removed glass background on mobile */
+    /* remove backdrop blur that created the glass effect */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
     border-radius: 20px !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12) !important;
     position: relative !important;
     z-index: 10 !important;
     display: flex !important;
@@ -1587,7 +1583,7 @@ h2.section-title::before,
   }
 
   /* Ensure the hero H1 wraps and doesn't overlap the header; slightly reduce on phones */
-  .layanan-page .main-title h1 {
+  .layanan-page .main-title-1 h1 {
     font-size: clamp(1.8rem, 8vw, 3rem) !important;
     line-height: 1.05 !important;
     margin-top: 0 !important;
@@ -1596,7 +1592,7 @@ h2.section-title::before,
     white-space: normal !important;
   }
 
-  .layanan-page .main-title h1 {
+  .layanan-page .main-title-1 h1 {
     background: none !important;
     -webkit-background-clip: initial !important;
     background-clip: initial !important;
@@ -1769,7 +1765,7 @@ h2.section-title::before,
   }
 
   /* Ensure text doesn't overflow on very small screens */
-  .layanan-page .main-title h1 {
+  .layanan-page .main-title-1 h1 {
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
@@ -1789,7 +1785,7 @@ h2.section-title::before,
 
 /* Additional ultra-small screen adjustments (max-width: 360px) */
 @media (max-width: 360px) {
-  .layanan-page .main-title h1 {
+  .layanan-page .main-title-1 h1 {
     font-size: 1.6rem !important;
   }
 
@@ -1930,13 +1926,9 @@ h2.section-title::before,
 }
 
 }
-
-
   .layanan-page .footer-container{
     margin: 5vh;
   }
-}
-
 /* 💻 Responsive adjustments for tablets (max 992px) */
 @media (max-width: 992px) {
   .layanan-page .header-overlay {
@@ -1959,7 +1951,7 @@ h2.section-title::before,
     font-size: 0.85rem;
   }
 
-  .layanan-page .main-title {
+  .layanan-page .main-title-1 {
     align-items: center;
     text-align: center;
     max-width: 90%;
@@ -2004,6 +1996,10 @@ h2.section-title::before,
 }
 /* Desktop enhancements: make images wider and more prominent on large screens */
 @media (min-width: 1200px) {
+  .layanan-page .main-title-1 .h1 .hero-tagline .header-buttons{
+    margin-top: 30vh;
+    
+  }
   .slideshow-container {
     max-width: 980px;
     padding: 28px 0 36px 0;
@@ -2083,7 +2079,7 @@ h2.section-title::before,
     font-size: clamp(1.05rem, 1rem + 1vw, 1.15rem);
   }
 
-  .layanan-page .main-title h1 {
+  .layanan-page .main-title-1 h1 {
     font-size: clamp(3.6rem, 2.8rem + 2.5vw, 5rem);
     margin-top: 36vh;
   }
@@ -2103,3 +2099,5 @@ h2.section-title::before,
     padding: 40px 48px;
   }
 }
+
+
