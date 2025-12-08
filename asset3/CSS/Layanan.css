@@ -592,11 +592,43 @@ body {
   display: block;
 }
 
+/* Desktop / Default */
 .layanan-page .section-header {
-  text-align: center;
-  margin-bottom: 1rem;
-  margin-top: -5vh;
+  text-align: center !important;
+  margin-bottom: 1rem !important;
+  margin-top: -14vh !important; /* your original */
+  position: relative !important;
+  z-index: 5 !important;
 }
+
+/* Prevent covering nav-wrapper on screens below 1024px */
+@media screen and (max-width: 1024px) {
+  .layanan-page .section-header {
+    margin-top: -6vh !important;
+  }
+}
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+  .layanan-page .section-header {
+    margin-top: -2vh !important;
+  }
+}
+
+/* Phones (No overlap allowed) */
+@media screen and (max-width: 480px) {
+  .layanan-page .section-header {
+    margin-top: 2vh !important;   /* safely under navbar */
+  }
+}
+
+/* Tiny Phones */
+@media screen and (max-width: 360px) {
+  .layanan-page .section-header {
+    margin-top: 3vh !important;   /* even safer */
+  }
+}
+
 
 .layanan-page .section-title {
   font-size: var(--fontL);
